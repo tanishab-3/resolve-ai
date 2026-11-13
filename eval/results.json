@@ -1,0 +1,1203 @@
+{
+  "ranAt": "2026-11-13T12:20:51.618Z",
+  "classification": {
+    "total": 50,
+    "evaluated": 50,
+    "failed": 0,
+    "category": {
+      "correct": 42,
+      "accuracy": "84.0%"
+    },
+    "department": {
+      "correct": 43,
+      "accuracy": "86.0%"
+    },
+    "priority": {
+      "correct": 39,
+      "accuracy": "78.0%"
+    },
+    "priorityWithinOneLevel": {
+      "correct": 50,
+      "accuracy": "100.0%"
+    },
+    "highPriorityRecall": {
+      "caught": 13,
+      "of": 14,
+      "recall": "92.9%",
+      "missedAsLow": 0
+    },
+    "priorityConfusionMatrix": {
+      "High": {
+        "High": 13,
+        "Medium": 1,
+        "Low": 0
+      },
+      "Medium": {
+        "High": 5,
+        "Medium": 19,
+        "Low": 0
+      },
+      "Low": {
+        "High": 0,
+        "Medium": 5,
+        "Low": 7
+      }
+    },
+    "modelsUsed": {
+      "gemini-3.5-flash-lite": 48,
+      "gemini-3.8-flash": 2
+    },
+    "mistakes": [
+      {
+        "title": "Ceiling fans not working",
+        "category": "ok",
+        "department": "Electrical -> Maintenance",
+        "priority": "ok"
+      },
+      {
+        "title": "No drinking water on the floor",
+        "category": "ok",
+        "department": "ok",
+        "priority": "High -> Medium"
+      },
+      {
+        "title": "Overflowing dustbins",
+        "category": "ok",
+        "department": "ok",
+        "priority": "Medium -> High"
+      },
+      {
+        "title": "Not enough seating in lecture hall",
+        "category": "ok",
+        "department": "Administration -> Maintenance",
+        "priority": "ok"
+      },
+      {
+        "title": "Projector not turning on",
+        "category": "ok",
+        "department": "ok",
+        "priority": "Low -> Medium"
+      },
+      {
+        "title": "Recorded lectures not loading",
+        "category": "ok",
+        "department": "ok",
+        "priority": "Medium -> High"
+      },
+      {
+        "title": "Library printer out of order",
+        "category": "ok",
+        "department": "ok",
+        "priority": "Low -> Medium"
+      },
+      {
+        "title": "Street light broken near hostel gate",
+        "category": "Safety -> Infrastructure",
+        "department": "ok",
+        "priority": "ok"
+      },
+      {
+        "title": "Expired fire extinguishers",
+        "category": "ok",
+        "department": "Maintenance -> Security",
+        "priority": "ok"
+      },
+      {
+        "title": "Slippery floor at main entrance",
+        "category": "Safety -> Infrastructure",
+        "department": "ok",
+        "priority": "ok"
+      },
+      {
+        "title": "CCTV cameras not working in parking",
+        "category": "ok",
+        "department": "ok",
+        "priority": "Medium -> High"
+      },
+      {
+        "title": "Loose staircase railing",
+        "category": "Safety -> Infrastructure",
+        "department": "ok",
+        "priority": "ok"
+      },
+      {
+        "title": "Rude behaviour of office staff",
+        "category": "ok",
+        "department": "ok",
+        "priority": "Low -> Medium"
+      },
+      {
+        "title": "Syllabus not completed",
+        "category": "ok",
+        "department": "ok",
+        "priority": "Medium -> High"
+      },
+      {
+        "title": "Lab equipment is outdated",
+        "category": "Academic -> Technical",
+        "department": "Academic Office -> IT Services",
+        "priority": "ok"
+      },
+      {
+        "title": "Not enough textbook copies",
+        "category": "ok",
+        "department": "ok",
+        "priority": "Low -> Medium"
+      },
+      {
+        "title": "Request for doubt-clearing classes",
+        "category": "ok",
+        "department": "ok",
+        "priority": "Low -> Medium"
+      },
+      {
+        "title": "Suggestion for more sports facilities",
+        "category": "Other -> Academic",
+        "department": "Administration -> Academic Office",
+        "priority": "ok"
+      },
+      {
+        "title": "Construction noise during exams",
+        "category": "Other -> Infrastructure",
+        "department": "ok",
+        "priority": "Medium -> High"
+      },
+      {
+        "title": "Lost wallet in canteen",
+        "category": "Other -> Administrative",
+        "department": "Security -> Administration",
+        "priority": "ok"
+      },
+      {
+        "title": "Request to start a photography club",
+        "category": "Other -> Academic",
+        "department": "Administration -> Academic Office",
+        "priority": "ok"
+      }
+    ]
+  },
+  "rows": [
+    {
+      "title": "Water cooler not working",
+      "location": "Second floor, Block A",
+      "description": "The water cooler on the second floor has not worked for three days. Many students are affected.",
+      "category": "Infrastructure",
+      "department": "Maintenance",
+      "priority": "Medium",
+      "predicted": {
+        "category": "Infrastructure",
+        "subcategory": "Water Cooler",
+        "priority": "Medium",
+        "priorityReason": "It affects many students and has been broken for three days.",
+        "department": "Maintenance",
+        "summary": "The second floor water cooler in Block A is non-functional."
+      },
+      "model": "gemini-3.5-flash-lite"
+    },
+    {
+      "title": "Leaking tap in washroom",
+      "location": "Ground floor washroom, Block C",
+      "description": "A tap in the washroom keeps dripping and wastes water. It has been like this for a week.",
+      "category": "Infrastructure",
+      "department": "Maintenance",
+      "priority": "Low",
+      "predicted": {
+        "category": "Infrastructure",
+        "subcategory": "Plumbing",
+        "priority": "Low",
+        "priorityReason": "The issue involves a minor water leak with no immediate safety or health risk.",
+        "department": "Maintenance",
+        "summary": "A dripping tap in the Block C ground floor washroom needs repair."
+      },
+      "model": "gemini-3.5-flash-lite"
+    },
+    {
+      "title": "Broken bench in canteen",
+      "location": "Canteen",
+      "description": "One bench has a loose leg. It is not urgent but should be repaired sometime.",
+      "category": "Infrastructure",
+      "department": "Maintenance",
+      "priority": "Low",
+      "predicted": {
+        "category": "Infrastructure",
+        "subcategory": "Furniture",
+        "priority": "Low",
+        "priorityReason": "The issue is not urgent and poses minimal risk.",
+        "department": "Maintenance",
+        "summary": "A bench in the canteen has a loose leg and needs repair."
+      },
+      "model": "gemini-3.5-flash-lite"
+    },
+    {
+      "title": "Ceiling fans not working",
+      "location": "Classroom 105, Block B",
+      "description": "All the fans in room 105 are off and the room is very hot during afternoon lectures.",
+      "category": "Infrastructure",
+      "department": "Electrical",
+      "priority": "Medium",
+      "predicted": {
+        "category": "Infrastructure",
+        "subcategory": "Classroom Amenities",
+        "priority": "Medium",
+        "priorityReason": "The non-functioning fans cause discomfort for students during afternoon lectures.",
+        "department": "Maintenance",
+        "summary": "All ceiling fans in Classroom 105 are not working."
+      },
+      "model": "gemini-3.5-flash-lite"
+    },
+    {
+      "title": "Cracked window in library",
+      "location": "Library, first floor",
+      "description": "A window pane is cracked and rain water comes inside when it rains.",
+      "category": "Infrastructure",
+      "department": "Maintenance",
+      "priority": "Medium",
+      "predicted": {
+        "category": "Infrastructure",
+        "subcategory": "Building Damage",
+        "priority": "Medium",
+        "priorityReason": "Water leakage during rain poses a risk to library property and student comfort.",
+        "department": "Maintenance",
+        "summary": "A cracked window on the first floor of the library is allowing rainwater to enter."
+      },
+      "model": "gemini-3.5-flash-lite"
+    },
+    {
+      "title": "Peeling paint in corridor",
+      "location": "Block D, First Floor",
+      "description": "Paint is peeling off the walls. It is only a cosmetic issue and can be done sometime this year.",
+      "category": "Infrastructure",
+      "department": "Maintenance",
+      "priority": "Low",
+      "predicted": {
+        "category": "Infrastructure",
+        "subcategory": "Painting",
+        "priority": "Low",
+        "priorityReason": "It is only a cosmetic issue with no safety risk.",
+        "department": "Maintenance",
+        "summary": "Paint is peeling off the walls in the Block D first-floor corridor."
+      },
+      "model": "gemini-3.5-flash-lite"
+    },
+    {
+      "title": "Lift gets stuck frequently",
+      "location": "Block A",
+      "description": "The lift stops between floors several times a week. Students with injuries and staff cannot use the stairs.",
+      "category": "Infrastructure",
+      "department": "Maintenance",
+      "priority": "High",
+      "predicted": {
+        "category": "Infrastructure",
+        "subcategory": "Elevator",
+        "priority": "High",
+        "priorityReason": "The frequent lift malfunctions pose a significant safety risk and prevent injured students and staff from accessing floors.",
+        "department": "Maintenance",
+        "summary": "The lift in Block A gets stuck frequently, preventing injured students and staff from using upper floors."
+      },
+      "model": "gemini-3.5-flash-lite"
+    },
+    {
+      "title": "Potholes on campus road",
+      "location": "Main campus road near Gate 2",
+      "description": "Deep potholes near the gate make bikes slip, especially after rain.",
+      "category": "Infrastructure",
+      "department": "Maintenance",
+      "priority": "Medium",
+      "predicted": {
+        "category": "Infrastructure",
+        "subcategory": "Roads",
+        "priority": "Medium",
+        "priorityReason": "It poses a moderate safety risk to two-wheeler riders, especially during wet weather.",
+        "department": "Maintenance",
+        "summary": "Deep potholes near Gate 2 are causing bikes to slip after rain."
+      },
+      "model": "gemini-3.5-flash-lite"
+    },
+    {
+      "title": "No drinking water on the floor",
+      "location": "Third floor, Block A",
+      "description": "There has been no drinking water available on the third floor since Tuesday and students have to go down to the ground floor.",
+      "category": "Infrastructure",
+      "department": "Maintenance",
+      "priority": "High",
+      "predicted": {
+        "category": "Infrastructure",
+        "subcategory": "Water Supply",
+        "priority": "Medium",
+        "priorityReason": "It affects multiple students daily since Tuesday, creating inconvenience.",
+        "department": "Maintenance",
+        "summary": "Drinking water is unavailable on the third floor of Block A."
+      },
+      "model": "gemini-3.5-flash-lite"
+    },
+    {
+      "title": "Overflowing dustbins",
+      "location": "Hostel Block B",
+      "description": "Dustbins have not been emptied for days. There is a bad smell and flies everywhere.",
+      "category": "Infrastructure",
+      "department": "Maintenance",
+      "priority": "Medium",
+      "predicted": {
+        "category": "Infrastructure",
+        "subcategory": "Waste Management",
+        "priority": "High",
+        "priorityReason": "Accumulated waste and insect infestation pose health and hygiene risks to hostel residents.",
+        "department": "Maintenance",
+        "summary": "Dustbins in Hostel Block B have not been emptied for days, causing foul odors and attracting flies."
+      },
+      "model": "gemini-3.8-flash"
+    },
+    {
+      "title": "Not enough seating in lecture hall",
+      "location": "Lecture Hall 2",
+      "description": "The hall has fewer benches than students, so many students sit on the floor during lectures.",
+      "category": "Infrastructure",
+      "department": "Administration",
+      "priority": "Medium",
+      "predicted": {
+        "category": "Infrastructure",
+        "subcategory": "Seating",
+        "priority": "Medium",
+        "priorityReason": "It affects many students' comfort and learning environment during lectures.",
+        "department": "Maintenance",
+        "summary": "Lecture Hall 2 lacks sufficient seating, causing students to sit on the floor."
+      },
+      "model": "gemini-3.5-flash-lite"
+    },
+    {
+      "title": "Broken washroom door lock",
+      "location": "Girls washroom, Block B",
+      "description": "The lock on the last cubicle door is broken so the door cannot be closed.",
+      "category": "Infrastructure",
+      "department": "Maintenance",
+      "priority": "Medium",
+      "predicted": {
+        "category": "Infrastructure",
+        "subcategory": "Washroom Fixtures",
+        "priority": "Medium",
+        "priorityReason": "A broken cubicle lock compromises privacy and security for washroom users.",
+        "department": "Maintenance",
+        "summary": "The last cubicle door lock in the Block B girls' washroom is broken and cannot close."
+      },
+      "model": "gemini-3.8-flash"
+    },
+    {
+      "title": "Wi-Fi not connecting in library",
+      "location": "Central Library",
+      "description": "The Wi-Fi has been slow and keeps disconnecting since Monday. Students cannot access online study material.",
+      "category": "Technical",
+      "department": "IT Services",
+      "priority": "Medium",
+      "predicted": {
+        "category": "Technical",
+        "subcategory": "Network/Wi-Fi",
+        "priority": "Medium",
+        "priorityReason": "Multiple students are affected in their studies, but it does not pose an immediate safety risk.",
+        "department": "IT Services",
+        "summary": "Wi-Fi in the central library has been unreliable since Monday, hindering student access to study materials."
+      },
+      "model": "gemini-3.5-flash-lite"
+    },
+    {
+      "title": "Portal not showing exam results",
+      "location": "Online student portal",
+      "description": "The student portal shows an error when I open my semester results. It has been like this for two days.",
+      "category": "Technical",
+      "department": "IT Services",
+      "priority": "Medium",
+      "predicted": {
+        "category": "Technical",
+        "subcategory": "Student Portal",
+        "priority": "Medium",
+        "priorityReason": "The issue prevents students from accessing exam results and has persisted for two days.",
+        "department": "IT Services",
+        "summary": "The online student portal displays an error instead of semester exam results."
+      },
+      "model": "gemini-3.5-flash-lite"
+    },
+    {
+      "title": "Projector not turning on",
+      "location": "Classroom 204, Block B",
+      "description": "The projector does not turn on. Teachers are using the whiteboard instead.",
+      "category": "Technical",
+      "department": "IT Services",
+      "priority": "Low",
+      "predicted": {
+        "category": "Technical",
+        "subcategory": "Classroom Equipment",
+        "priority": "Medium",
+        "priorityReason": "It disrupts teaching in the classroom, though an alternative is currently available.",
+        "department": "IT Services",
+        "summary": "The projector in Classroom 204 does not turn on."
+      },
+      "model": "gemini-3.5-flash-lite"
+    },
+    {
+      "title": "Computer lab systems not booting",
+      "location": "Computer Lab, Block C",
+      "description": "More than half of the computers fail to boot, so practicals cannot be done and our exams are next week.",
+      "category": "Technical",
+      "department": "IT Services",
+      "priority": "High",
+      "predicted": {
+        "category": "Technical",
+        "subcategory": "Computer Lab Hardware",
+        "priority": "High",
+        "priorityReason": "The issue affects multiple computers and upcoming exams are next week.",
+        "department": "IT Services",
+        "summary": "More than half of the computers in Block C lab fail to boot before exams."
+      },
+      "model": "gemini-3.5-flash-lite"
+    },
+    {
+      "title": "Cannot log in to college email",
+      "location": "Student email",
+      "description": "I cannot log in to my college email since the password reset and I am missing important notices.",
+      "category": "Technical",
+      "department": "IT Services",
+      "priority": "Medium",
+      "predicted": {
+        "category": "Technical",
+        "subcategory": "Email Access",
+        "priority": "Medium",
+        "priorityReason": "Missing important notices makes login access moderately urgent for the student.",
+        "department": "IT Services",
+        "summary": "Student cannot access college email following a password reset."
+      },
+      "model": "gemini-3.5-flash-lite"
+    },
+    {
+      "title": "Recorded lectures not loading",
+      "location": "Online learning platform",
+      "description": "Recorded lecture videos keep buffering for everyone in my batch.",
+      "category": "Technical",
+      "department": "IT Services",
+      "priority": "Medium",
+      "predicted": {
+        "category": "Technical",
+        "subcategory": "Online Platform",
+        "priority": "High",
+        "priorityReason": "The issue affects the entire batch of students attempting to access course materials.",
+        "department": "IT Services",
+        "summary": "Recorded lecture videos are persistently buffering for all students in the batch."
+      },
+      "model": "gemini-3.5-flash-lite"
+    },
+    {
+      "title": "Library printer out of order",
+      "location": "Central Library",
+      "description": "The printer in the library has been out of order for two weeks.",
+      "category": "Technical",
+      "department": "IT Services",
+      "priority": "Low",
+      "predicted": {
+        "category": "Technical",
+        "subcategory": "Printer Malfunction",
+        "priority": "Medium",
+        "priorityReason": "The printer has been out of order for two weeks, causing ongoing inconvenience to students.",
+        "department": "IT Services",
+        "summary": "The central library printer has been non-functional for two weeks."
+      },
+      "model": "gemini-3.5-flash-lite"
+    },
+    {
+      "title": "Online exam portal crashed",
+      "location": "Exam portal",
+      "description": "The exam portal crashed during the internal test and many students lost their answers.",
+      "category": "Technical",
+      "department": "IT Services",
+      "priority": "High",
+      "predicted": {
+        "category": "Technical",
+        "subcategory": "Exam Portal",
+        "priority": "High",
+        "priorityReason": "The system crash affects many students during an ongoing exam.",
+        "department": "IT Services",
+        "summary": "The online exam portal crashed during the internal test causing students to lose their answers."
+      },
+      "model": "gemini-3.5-flash-lite"
+    },
+    {
+      "title": "Slow Wi-Fi in hostel rooms",
+      "location": "Boys Hostel",
+      "description": "The Wi-Fi in the hostel rooms is very slow at night so we cannot study online.",
+      "category": "Technical",
+      "department": "IT Services",
+      "priority": "Medium",
+      "predicted": {
+        "category": "Technical",
+        "subcategory": "Network/Wi-Fi",
+        "priority": "Medium",
+        "priorityReason": "It affects students' ability to study online during peak hours every night.",
+        "department": "IT Services",
+        "summary": "Students are experiencing slow hostel Wi-Fi at night which impacts online studying."
+      },
+      "model": "gemini-3.5-flash-lite"
+    },
+    {
+      "title": "Street light broken near hostel gate",
+      "location": "Hostel Gate",
+      "description": "The street light has not worked for a week. It is completely dark at night and girls are scared to walk back.",
+      "category": "Safety",
+      "department": "Electrical",
+      "priority": "High",
+      "predicted": {
+        "category": "Infrastructure",
+        "subcategory": "Lighting",
+        "priority": "High",
+        "priorityReason": "It poses a safety risk due to complete darkness at night near the hostel gate.",
+        "department": "Electrical",
+        "summary": "The street light near the hostel gate has been broken for a week, creating safety concerns."
+      },
+      "model": "gemini-3.5-flash-lite"
+    },
+    {
+      "title": "Sparking wire in computer lab",
+      "location": "Computer Lab, Block C",
+      "description": "An exposed wire near the third row sparked today when a student touched the table. Please fix it before someone gets hurt.",
+      "category": "Safety",
+      "department": "Electrical",
+      "priority": "High",
+      "predicted": {
+        "category": "Safety",
+        "subcategory": "Electrical Hazard",
+        "priority": "High",
+        "priorityReason": "An exposed sparking wire poses an immediate electrical shock and fire hazard to students.",
+        "department": "Electrical",
+        "summary": "An exposed and sparking wire in the Block C computer lab requires immediate repair to ensure safety."
+      },
+      "model": "gemini-3.5-flash-lite"
+    },
+    {
+      "title": "Stray dogs near hostel entrance",
+      "location": "Girls hostel entrance",
+      "description": "A group of stray dogs chases students every evening and a few students have almost been bitten.",
+      "category": "Safety",
+      "department": "Security",
+      "priority": "High",
+      "predicted": {
+        "category": "Safety",
+        "subcategory": "Animal Hazard",
+        "priority": "High",
+        "priorityReason": "The issue poses a direct safety risk of physical harm to students.",
+        "department": "Security",
+        "summary": "Stray dogs are aggressively chasing students near the girls hostel entrance."
+      },
+      "model": "gemini-3.5-flash-lite"
+    },
+    {
+      "title": "Expired fire extinguishers",
+      "location": "Chemistry Lab",
+      "description": "The fire extinguishers show an expiry date from last year and the lab uses open flames.",
+      "category": "Safety",
+      "department": "Maintenance",
+      "priority": "High",
+      "predicted": {
+        "category": "Safety",
+        "subcategory": "Fire Safety",
+        "priority": "High",
+        "priorityReason": "Expired fire extinguishers in a lab with open flames pose an immediate safety and health risk.",
+        "department": "Security",
+        "summary": "The fire extinguishers in the Chemistry Lab are expired and need immediate replacement."
+      },
+      "model": "gemini-3.5-flash-lite"
+    },
+    {
+      "title": "Slippery floor at main entrance",
+      "location": "Main building entrance",
+      "description": "The floor becomes very slippery when wet and two students fell this week.",
+      "category": "Safety",
+      "department": "Maintenance",
+      "priority": "High",
+      "predicted": {
+        "category": "Infrastructure",
+        "subcategory": "Flooring",
+        "priority": "High",
+        "priorityReason": "Multiple students have already fallen, creating an immediate safety risk.",
+        "department": "Maintenance",
+        "summary": "The main entrance floor becomes dangerously slippery when wet, causing student falls."
+      },
+      "model": "gemini-3.5-flash-lite"
+    },
+    {
+      "title": "Strangers entering through back gate",
+      "location": "Back gate",
+      "description": "Unknown people walk in through the back gate without any checking, even at night.",
+      "category": "Safety",
+      "department": "Security",
+      "priority": "High",
+      "predicted": {
+        "category": "Safety",
+        "subcategory": "Campus Security",
+        "priority": "High",
+        "priorityReason": "Unmonitored access by strangers poses a direct security and safety risk to the college.",
+        "department": "Security",
+        "summary": "Unknown individuals are entering the campus through the back gate without checking, especially at night."
+      },
+      "model": "gemini-3.5-flash-lite"
+    },
+    {
+      "title": "CCTV cameras not working in parking",
+      "location": "Parking area",
+      "description": "The CCTV cameras in the parking area have been off for a month after two bike thefts.",
+      "category": "Safety",
+      "department": "Security",
+      "priority": "Medium",
+      "predicted": {
+        "category": "Safety",
+        "subcategory": "Surveillance",
+        "priority": "High",
+        "priorityReason": "The non-functional cameras directly compromise security following recent thefts in the parking area.",
+        "department": "Security",
+        "summary": "CCTV cameras in the parking lot have been inoperative for a month after bike thefts."
+      },
+      "model": "gemini-3.5-flash-lite"
+    },
+    {
+      "title": "Loose staircase railing",
+      "location": "Block A staircase",
+      "description": "The railing on the second staircase is loose and someone could fall.",
+      "category": "Safety",
+      "department": "Maintenance",
+      "priority": "High",
+      "predicted": {
+        "category": "Infrastructure",
+        "subcategory": "Staircase Railing",
+        "priority": "High",
+        "priorityReason": "A loose railing poses a severe physical safety risk for everyone using the staircase.",
+        "department": "Maintenance",
+        "summary": "The staircase railing in Block A is loose and presents a fall hazard."
+      },
+      "model": "gemini-3.5-flash-lite"
+    },
+    {
+      "title": "Gas smell near hostel kitchen",
+      "location": "Hostel mess kitchen",
+      "description": "There is a smell of gas near the hostel kitchen every evening and the staff say there may be a leak.",
+      "category": "Safety",
+      "department": "Maintenance",
+      "priority": "High",
+      "predicted": {
+        "category": "Safety",
+        "subcategory": "Gas leak",
+        "priority": "High",
+        "priorityReason": "A potential gas leak poses an immediate safety and health risk to students and staff.",
+        "department": "Maintenance",
+        "summary": "Staff report a recurring gas smell near the hostel kitchen indicating a possible leak."
+      },
+      "model": "gemini-3.5-flash-lite"
+    },
+    {
+      "title": "Scholarship verification delayed",
+      "location": "Administrative Office",
+      "description": "I submitted my scholarship documents three weeks ago and verification is still pending.",
+      "category": "Administrative",
+      "department": "Administration",
+      "priority": "Medium",
+      "predicted": {
+        "category": "Administrative",
+        "subcategory": "Scholarship",
+        "priority": "Medium",
+        "priorityReason": "The delay has lasted for three weeks and affects the student's financial support.",
+        "department": "Administration",
+        "summary": "Scholarship document verification has been delayed for three weeks."
+      },
+      "model": "gemini-3.5-flash-lite"
+    },
+    {
+      "title": "Fee receipt not issued",
+      "location": "Accounts Office",
+      "description": "I paid my semester fee ten days ago but I have not received the receipt yet.",
+      "category": "Administrative",
+      "department": "Administration",
+      "priority": "Medium",
+      "predicted": {
+        "category": "Administrative",
+        "subcategory": "Fee Receipt",
+        "priority": "Medium",
+        "priorityReason": "The delay of ten days in issuing the fee receipt affects the student's administrative records.",
+        "department": "Administration",
+        "summary": "The student has not received their semester fee receipt ten days after payment."
+      },
+      "model": "gemini-3.5-flash-lite"
+    },
+    {
+      "title": "Bonafide certificate delayed",
+      "location": "Administrative Office",
+      "description": "I applied for a bonafide certificate fifteen days ago and it is still not ready. I need it for my passport.",
+      "category": "Administrative",
+      "department": "Administration",
+      "priority": "Medium",
+      "predicted": {
+        "category": "Administrative",
+        "subcategory": "Bonafide Certificate",
+        "priority": "Medium",
+        "priorityReason": "The delay of fifteen days is impacting the student's passport application.",
+        "department": "Administration",
+        "summary": "A student's bonafide certificate application has been delayed for fifteen days."
+      },
+      "model": "gemini-3.5-flash-lite"
+    },
+    {
+      "title": "Wrong name on ID card",
+      "location": "Administrative Office",
+      "description": "My ID card has a spelling mistake in my name and the library does not accept it.",
+      "category": "Administrative",
+      "department": "Administration",
+      "priority": "Low",
+      "predicted": {
+        "category": "Administrative",
+        "subcategory": "ID Card",
+        "priority": "Low",
+        "priorityReason": "The issue causes minor inconvenience without posing any health or safety risks.",
+        "department": "Administration",
+        "summary": "A student reports a spelling mistake on their ID card causing issues at the library."
+      },
+      "model": "gemini-3.5-flash-lite"
+    },
+    {
+      "title": "Hostel room allotment pending",
+      "location": "Hostel office",
+      "description": "I have been waiting a month for a hostel room and I travel three hours every day.",
+      "category": "Administrative",
+      "department": "Administration",
+      "priority": "Medium",
+      "predicted": {
+        "category": "Administrative",
+        "subcategory": "Hostel Allotment",
+        "priority": "Medium",
+        "priorityReason": "The student has been waiting for a month and faces a long daily commute.",
+        "department": "Administration",
+        "summary": "Hostel room allotment has been pending for a month causing a lengthy daily commute."
+      },
+      "model": "gemini-3.5-flash-lite"
+    },
+    {
+      "title": "Caution money refund not processed",
+      "location": "Accounts Office",
+      "description": "My caution money refund has been pending for six months despite many visits to the office.",
+      "category": "Administrative",
+      "department": "Administration",
+      "priority": "Medium",
+      "predicted": {
+        "category": "Administrative",
+        "subcategory": "Refunds",
+        "priority": "Medium",
+        "priorityReason": "The financial delay has persisted for six months causing significant inconvenience.",
+        "department": "Administration",
+        "summary": "Caution money refund has been pending for six months despite multiple visits."
+      },
+      "model": "gemini-3.5-flash-lite"
+    },
+    {
+      "title": "Transfer certificate needed urgently",
+      "location": "Administrative Office",
+      "description": "I need my transfer certificate within five days for another college admission deadline but the office says it will take three weeks.",
+      "category": "Administrative",
+      "department": "Administration",
+      "priority": "High",
+      "predicted": {
+        "category": "Administrative",
+        "subcategory": "Transfer Certificate",
+        "priority": "High",
+        "priorityReason": "The transfer certificate is urgently required for an upcoming admission deadline.",
+        "department": "Administration",
+        "summary": "A student is requesting an expedited transfer certificate due to a looming admission deadline."
+      },
+      "model": "gemini-3.5-flash-lite"
+    },
+    {
+      "title": "Rude behaviour of office staff",
+      "location": "Administrative Office",
+      "description": "The staff at the counter speak rudely and refuse to explain the process.",
+      "category": "Administrative",
+      "department": "Administration",
+      "priority": "Low",
+      "predicted": {
+        "category": "Administrative",
+        "subcategory": "Staff Behavior",
+        "priority": "Medium",
+        "priorityReason": "Rude staff behavior affects student experience and warrants administrative intervention.",
+        "department": "Administration",
+        "summary": "Administrative staff exhibited rude behavior and refused to explain processes at the counter."
+      },
+      "model": "gemini-3.5-flash-lite"
+    },
+    {
+      "title": "Attendance recorded wrongly",
+      "location": "Computer Science department",
+      "description": "My attendance shows absent on days I was present and I may be barred from the exam in two weeks.",
+      "category": "Academic",
+      "department": "Academic Office",
+      "priority": "High",
+      "predicted": {
+        "category": "Academic",
+        "subcategory": "Attendance",
+        "priority": "High",
+        "priorityReason": "The student risks being barred from upcoming exams due to the wrong attendance records.",
+        "department": "Academic Office",
+        "summary": "Student attendance is incorrectly recorded as absent, threatening exam eligibility."
+      },
+      "model": "gemini-3.5-flash-lite"
+    },
+    {
+      "title": "Syllabus not completed",
+      "location": "Mathematics department",
+      "description": "The teacher has covered only half of the syllabus and the exam is in a month.",
+      "category": "Academic",
+      "department": "Academic Office",
+      "priority": "Medium",
+      "predicted": {
+        "category": "Academic",
+        "subcategory": "Syllabus Completion",
+        "priority": "High",
+        "priorityReason": "The exam is in a month and half the syllabus remains uncompleted, directly impacting student grades.",
+        "department": "Academic Office",
+        "summary": "Students report that the mathematics teacher has only covered half the syllabus with exams approaching in one month."
+      },
+      "model": "gemini-3.5-flash-lite"
+    },
+    {
+      "title": "Timetable clash",
+      "location": "Third year timetable",
+      "description": "Two of my core subjects are scheduled at the same time on Tuesdays.",
+      "category": "Academic",
+      "department": "Academic Office",
+      "priority": "Medium",
+      "predicted": {
+        "category": "Academic",
+        "subcategory": "Timetable",
+        "priority": "Medium",
+        "priorityReason": "Scheduling conflicts prevent students from attending core subjects, impacting their academic progress.",
+        "department": "Academic Office",
+        "summary": "Two core subjects are scheduled at the same time on Tuesdays for the third year timetable."
+      },
+      "model": "gemini-3.5-flash-lite"
+    },
+    {
+      "title": "Lab equipment is outdated",
+      "location": "Electronics Lab, Block A",
+      "description": "Many oscilloscopes give wrong readings so our experiments often fail.",
+      "category": "Academic",
+      "department": "Academic Office",
+      "priority": "Medium",
+      "predicted": {
+        "category": "Technical",
+        "subcategory": "Lab Equipment",
+        "priority": "Medium",
+        "priorityReason": "Outdated equipment hinders academic progress for multiple students in the lab.",
+        "department": "IT Services",
+        "summary": "Electronics lab oscilloscopes are giving inaccurate readings and causing experiment failures."
+      },
+      "model": "gemini-3.5-flash-lite"
+    },
+    {
+      "title": "Not enough textbook copies",
+      "location": "Central Library",
+      "description": "The recommended textbooks have only two copies for around 200 students.",
+      "category": "Academic",
+      "department": "Academic Office",
+      "priority": "Low",
+      "predicted": {
+        "category": "Academic",
+        "subcategory": "Library Resources",
+        "priority": "Medium",
+        "priorityReason": "A large number of students are affected by the insufficient textbook copies, impacting their studies.",
+        "department": "Academic Office",
+        "summary": "Only two textbook copies are available for approximately 200 students in the Central Library."
+      },
+      "model": "gemini-3.5-flash-lite"
+    },
+    {
+      "title": "Wrong marks in internal result",
+      "location": "Examination cell",
+      "description": "My internal exam marks are shown as 12 in the results but I scored 21.",
+      "category": "Academic",
+      "department": "Academic Office",
+      "priority": "Medium",
+      "predicted": {
+        "category": "Academic",
+        "subcategory": "Grading",
+        "priority": "Medium",
+        "priorityReason": "Incorrect marks directly impact the student's academic standing and require timely correction.",
+        "department": "Academic Office",
+        "summary": "The student reports a discrepancy where internal exam marks are incorrectly displayed as 12 instead of 21."
+      },
+      "model": "gemini-3.5-flash-lite"
+    },
+    {
+      "title": "Request for doubt-clearing classes",
+      "location": "Physics department",
+      "description": "Students would like extra doubt-clearing classes before the semester exam.",
+      "category": "Academic",
+      "department": "Academic Office",
+      "priority": "Low",
+      "predicted": {
+        "category": "Academic",
+        "subcategory": "Doubt-clearing classes",
+        "priority": "Medium",
+        "priorityReason": "Extra classes are needed before semester exams to help students prepare.",
+        "department": "Academic Office",
+        "summary": "Students requested extra doubt-clearing classes in the Physics department before semester exams."
+      },
+      "model": "gemini-3.5-flash-lite"
+    },
+    {
+      "title": "Teacher often absent",
+      "location": "Chemistry department",
+      "description": "Our chemistry teacher has missed most classes this month and no substitute has been arranged.",
+      "category": "Academic",
+      "department": "Academic Office",
+      "priority": "Medium",
+      "predicted": {
+        "category": "Academic",
+        "subcategory": "Teacher Attendance",
+        "priority": "Medium",
+        "priorityReason": "Missing multiple classes affects student learning progress.",
+        "department": "Academic Office",
+        "summary": "The chemistry teacher has been frequently absent without a substitute."
+      },
+      "model": "gemini-3.5-flash-lite"
+    },
+    {
+      "title": "Suggestion for more sports facilities",
+      "location": "Sports ground",
+      "description": "We would like a basketball court and more sports equipment for students.",
+      "category": "Other",
+      "department": "Administration",
+      "priority": "Low",
+      "predicted": {
+        "category": "Academic",
+        "subcategory": "Sports Facilities",
+        "priority": "Low",
+        "priorityReason": "The request is a suggestion for improvement rather than an urgent safety issue.",
+        "department": "Academic Office",
+        "summary": "Students are requesting a new basketball court and additional sports equipment."
+      },
+      "model": "gemini-3.5-flash-lite"
+    },
+    {
+      "title": "Construction noise during exams",
+      "location": "Behind Block B",
+      "description": "There is drilling noise from the construction next door during exams and it is hard to concentrate.",
+      "category": "Other",
+      "department": "Administration",
+      "priority": "Medium",
+      "predicted": {
+        "category": "Infrastructure",
+        "subcategory": "Noise Pollution",
+        "priority": "High",
+        "priorityReason": "The noise directly impacts student concentration and performance during crucial examinations.",
+        "department": "Administration",
+        "summary": "Students are struggling to concentrate on exams due to loud construction noise behind Block B."
+      },
+      "model": "gemini-3.5-flash-lite"
+    },
+    {
+      "title": "Lost wallet in canteen",
+      "location": "Canteen",
+      "description": "I lost my wallet in the canteen yesterday and it has my ID card in it.",
+      "category": "Other",
+      "department": "Security",
+      "priority": "Low",
+      "predicted": {
+        "category": "Administrative",
+        "subcategory": "Lost and Found",
+        "priority": "Low",
+        "priorityReason": "Lost personal items pose no immediate safety risk.",
+        "department": "Administration",
+        "summary": "A student lost their wallet containing an ID card in the canteen yesterday."
+      },
+      "model": "gemini-3.5-flash-lite"
+    },
+    {
+      "title": "Request to start a photography club",
+      "location": "Student activity centre",
+      "description": "A few of us would like to start a photography club and need a room and permission.",
+      "category": "Other",
+      "department": "Administration",
+      "priority": "Low",
+      "predicted": {
+        "category": "Academic",
+        "subcategory": "Club Setup",
+        "priority": "Low",
+        "priorityReason": "This is a new student club request with no immediate safety or health risks involved.",
+        "department": "Academic Office",
+        "summary": "Students are requesting permission and a room to start a new photography club."
+      },
+      "model": "gemini-3.5-flash-lite"
+    }
+  ],
+  "duplicates": {
+    "pairsScored": 20,
+    "table": [
+      {
+        "threshold": 0.7,
+        "truePositives": 10,
+        "falsePositives": 8,
+        "falseNegatives": 0,
+        "precision": "0.56",
+        "recall": "1.00",
+        "f1": "0.71"
+      },
+      {
+        "threshold": 0.75,
+        "truePositives": 10,
+        "falsePositives": 5,
+        "falseNegatives": 0,
+        "precision": "0.67",
+        "recall": "1.00",
+        "f1": "0.80"
+      },
+      {
+        "threshold": 0.8,
+        "truePositives": 10,
+        "falsePositives": 2,
+        "falseNegatives": 0,
+        "precision": "0.83",
+        "recall": "1.00",
+        "f1": "0.91"
+      },
+      {
+        "threshold": 0.85,
+        "truePositives": 8,
+        "falsePositives": 0,
+        "falseNegatives": 2,
+        "precision": "1.00",
+        "recall": "0.80",
+        "f1": "0.89"
+      },
+      {
+        "threshold": 0.9,
+        "truePositives": 8,
+        "falsePositives": 0,
+        "falseNegatives": 2,
+        "precision": "1.00",
+        "recall": "0.80",
+        "f1": "0.89"
+      }
+    ],
+    "scored": [
+      {
+        "duplicate": true,
+        "similarity": 0.959435521963114,
+        "a": "Ceiling fans not working",
+        "b": "Fans stopped in room 105"
+      },
+      {
+        "duplicate": true,
+        "similarity": 0.9491564374312398,
+        "a": "Street light broken near hostel gate",
+        "b": "No lights at the hostel entrance"
+      },
+      {
+        "duplicate": true,
+        "similarity": 0.9463579718088914,
+        "a": "Printer not working in library",
+        "b": "Library printing machine is broken"
+      },
+      {
+        "duplicate": true,
+        "similarity": 0.9410681318712407,
+        "a": "Stray dogs near hostel entrance",
+        "b": "Dogs attacking people at hostel gate"
+      },
+      {
+        "duplicate": true,
+        "similarity": 0.9302381519524385,
+        "a": "Water cooler not working",
+        "b": "No drinking water on second floor"
+      },
+      {
+        "duplicate": true,
+        "similarity": 0.9254880523120859,
+        "a": "Lift stuck between floors",
+        "b": "Elevator keeps breaking down"
+      },
+      {
+        "duplicate": true,
+        "similarity": 0.923042087919199,
+        "a": "Scholarship verification delayed",
+        "b": "Scholarship papers not verified yet"
+      },
+      {
+        "duplicate": true,
+        "similarity": 0.918513634814961,
+        "a": "Dustbins overflowing",
+        "b": "Garbage not collected"
+      },
+      {
+        "duplicate": false,
+        "similarity": 0.8410539042375174,
+        "a": "Ceiling fans not working",
+        "b": "Projector not turning on"
+      },
+      {
+        "duplicate": true,
+        "similarity": 0.8364414197071784,
+        "a": "Portal not showing results",
+        "b": "Cannot see my marks online"
+      },
+      {
+        "duplicate": true,
+        "similarity": 0.8191406539387449,
+        "a": "Wi-Fi not connecting in library",
+        "b": "Internet very slow in reading room"
+      },
+      {
+        "duplicate": false,
+        "similarity": 0.81765729713511,
+        "a": "Wi-Fi not connecting in library",
+        "b": "Printer not working in library"
+      },
+      {
+        "duplicate": false,
+        "similarity": 0.7981248242769664,
+        "a": "Street light broken near hostel gate",
+        "b": "Stray dogs near hostel entrance"
+      },
+      {
+        "duplicate": false,
+        "similarity": 0.7823065799287843,
+        "a": "Water cooler not working",
+        "b": "Water leakage in washroom"
+      },
+      {
+        "duplicate": false,
+        "similarity": 0.7669625541957706,
+        "a": "Lift stuck between floors",
+        "b": "Loose staircase railing"
+      },
+      {
+        "duplicate": false,
+        "similarity": 0.7419847448468333,
+        "a": "Dustbins overflowing",
+        "b": "Slow Wi-Fi in hostel rooms"
+      },
+      {
+        "duplicate": false,
+        "similarity": 0.7204770404207749,
+        "a": "Portal not showing results",
+        "b": "Online exam portal crashed"
+      },
+      {
+        "duplicate": false,
+        "similarity": 0.7187104768743546,
+        "a": "Scholarship verification delayed",
+        "b": "Fee receipt not issued"
+      },
+      {
+        "duplicate": false,
+        "similarity": 0.6908698707181162,
+        "a": "No drinking water on second floor",
+        "b": "Mess food quality is poor"
+      },
+      {
+        "duplicate": false,
+        "similarity": 0.6743016135386269,
+        "a": "Fans stopped in room 105",
+        "b": "Attendance recorded wrongly"
+      }
+    ]
+  }
+}
