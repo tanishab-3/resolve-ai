@@ -15,7 +15,10 @@ export default function AppHeader({ user, orgName }) {
 
       <div className="nav-links">
         {isStaff ? (
-          <Link href="/admin">Admin dashboard</Link>
+         <>
+            <Link href="/admin">Admin dashboard</Link>
+            {user?.role === "admin" && <Link href="/admin/policies">Policies</Link>}
+          </>
         ) : (
           <>
             <Link href="/dashboard">My complaints</Link>

@@ -1,3 +1,4 @@
+import PolicyAssistant from "./PolicyAssistant";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import AppHeader from "../../../components/AppHeader";
@@ -109,6 +110,10 @@ export default async function ComplaintDetailPage({ params }) {
                 departments={org?.departments || []}
                 canReassign={user.role === "admin"}
               />
+                          <section className="panel">
+              <h2 className="panel-title">Policy assistant</h2>
+              <PolicyAssistant rowId={c.rowId} />
+            </section>
             </section>
 
             <section className="panel">

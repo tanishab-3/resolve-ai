@@ -35,3 +35,30 @@ export async function embedText(text) {
 
   throw lastError;
 }
+// Embeds many texts at once (20 per request)
+export async function embedMany(texts) {
+  const vectors = [];
+
+  for (let i = 0; i < texts.length; i += 20) {
+    const batch = texts.slice(i, i + 20);
+    let response;
+
+    for (let attempt = 1; attempt <= 2; attempt++) {
+      try {
+        response = await ai.models.embedContent({
+          model: EMBEDDING_MODEL,
+          contents: batch,
+          config: { outputDimensionality: EMBEDDING_DIMENSIONS },
+        });
+        break;
+      } catch (error) {
+        if (attempt === 2) throw error;
+        await new Promise((resolve) => setTimeout(resolve, 1500));
+      }
+    }
+
+    for (const item of response.embeddings) vectors.push(item.values);
+  }
+
+  return vectors;
+}
