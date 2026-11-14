@@ -102,7 +102,7 @@ export default function Home() {
                 <span className="preview-label">RESOLVEAI OVERVIEW</span>
                 <h3>Grievance insights</h3>
               </div>
-              <span className="live-tag"><span></span> Live preview</span>
+              <span className="live-tag"><span></span> sample preview</span>
             </div>
 
             <div className="preview-stats">
