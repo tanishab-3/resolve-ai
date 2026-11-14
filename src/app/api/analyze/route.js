@@ -8,7 +8,7 @@ import {
   embedText,
   DUPLICATE_THRESHOLD,
 } from "@/lib/embeddings";
-
+export const maxDuration = 60;
 const ai = new GoogleGenAI({
   apiKey: process.env.GEMINI_API_KEY,
   httpOptions: { timeout: 15000 },
