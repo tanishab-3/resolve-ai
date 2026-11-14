@@ -1220,3 +1220,81 @@ button.button:disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }
+/* ---------- Password fields ---------- */
+.password-wrap {
+  position: relative;
+}
+
+.password-wrap input {
+  padding-right: 68px;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  background: none;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--blue);
+  cursor: pointer;
+}
+
+.password-toggle:hover {
+  background: #edf3ff;
+}
+
+.strength {
+  margin: -6px 0 16px;
+}
+
+.strength-bars {
+  display: flex;
+  gap: 4px;
+}
+
+.strength-bars span {
+  flex: 1;
+  height: 4px;
+  border-radius: 2px;
+  background: #e3e9f3;
+}
+
+.strength.s1 .fill {
+  background: #c43d3d;
+}
+
+.strength.s2 .fill {
+  background: #b57c14;
+}
+
+.strength.s3 .fill {
+  background: #3269d9;
+}
+
+.strength.s4 .fill {
+  background: #159b70;
+}
+
+.strength-label {
+  margin-top: 6px;
+  font-size: 11px;
+  color: #8290a4;
+}
+
+.field-error {
+  margin: -8px 0 14px;
+  font-size: 11px;
+  color: #c43d3d;
+}
+
+.field-ok {
+  margin: -8px 0 14px;
+  font-size: 11px;
+  color: #159b70;
+}
