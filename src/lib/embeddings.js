@@ -35,6 +35,7 @@ export async function embedText(text) {
 
   throw lastError;
 }
+
 // Embeds many texts at once (20 per request)
 export async function embedMany(texts) {
   const vectors = [];
