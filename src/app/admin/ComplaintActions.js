@@ -13,6 +13,7 @@ export default function ComplaintActions({
 }) {
   const router = useRouter();
   const [saving, setSaving] = useState(false);
+  const [saved, setSaved] = useState(false);
   const [error, setError] = useState("");
 
   const departmentOptions = departments.includes(department)
@@ -21,6 +22,7 @@ export default function ComplaintActions({
 
   async function update(change) {
     setSaving(true);
+    setSaved(false);
     setError("");
 
     try {
@@ -30,8 +32,10 @@ export default function ComplaintActions({
         body: JSON.stringify(change),
       });
       if (!res.ok) throw new Error("Request failed");
+      setSaved(true);
+      setTimeout(() => setSaved(false), 2000);
       router.refresh();
-    } catch (err) {
+    } catch {
       setError("Could not save. Try again.");
     } finally {
       setSaving(false);
@@ -65,6 +69,7 @@ export default function ComplaintActions({
         ))}
       </select>
 
+      {saved && <small className="saved-text">Saved ✓</small>}
       {error && <small className="error-text">{error}</small>}
     </div>
   );

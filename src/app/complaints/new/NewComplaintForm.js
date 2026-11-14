@@ -115,6 +115,7 @@ export default function NewComplaintForm() {
                 name="title"
                 value={form.title}
                 onChange={handleChange}
+                maxLength={200}
                 placeholder="e.g. Water cooler not working"
                 required
               />
@@ -125,6 +126,7 @@ export default function NewComplaintForm() {
                 name="location"
                 value={form.location}
                 onChange={handleChange}
+                maxLength={200}
                 placeholder="e.g. Second floor, Block A"
                 required
               />
@@ -136,17 +138,26 @@ export default function NewComplaintForm() {
                 value={form.description}
                 onChange={handleChange}
                 rows={6}
+                maxLength={2000}
                 placeholder="What happened? Since when? Who is affected?"
                 required
               />
+              <small className="char-count">{form.description.length}/2000</small>
             </div>
 
             {error && <p className="error-text">{error}</p>}
 
-            <button type="submit" className="button" disabled={loading}>
-              {loading ? "Analysing with AI..." : "Submit complaint"}{" "}
-              <span>→</span>
+                       <button type="submit" className="button" disabled={loading}>
+              {loading && <span className="spinner" />}
+              {loading ? "Analysing with AI..." : "Submit complaint"}
+              {!loading && <span>→</span>}
             </button>
+            {loading && (
+              <p className="hint">
+                Reading your complaint and checking for similar ones. This can
+                take up to 30 seconds.
+              </p>
+            )}
           </form>
         )}
       </div>

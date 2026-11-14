@@ -5,7 +5,7 @@ export default function AppHeader({ user, orgName }) {
   const isStaff = user?.role === "admin" || user?.role === "officer";
 
   return (
-    <nav className="navbar">
+    <nav className="navbar app-navbar">
       <Link href="/" className="brand">
         <span className="brand-icon">R</span>
         <span>

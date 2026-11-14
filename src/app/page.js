@@ -40,7 +40,17 @@ const steps = [
     description: "The concerned team reviews the issue and updates its progress.",
   },
 ];
+const organisations = [
+  { icon: "▣", name: "Colleges", text: "Maintenance, IT, safety and academic grievances." },
+  { icon: "◉", name: "Municipalities", text: "Roads, water supply, sanitation and street lighting." },
+  { icon: "✚", name: "Hospitals", text: "Patient care, facilities, billing and hygiene." },
+];
 
+const principles = [
+  { icon: "◈", name: "Humans decide", text: "The AI suggests priority and department. People make every final decision." },
+  { icon: "◎", name: "Explainable", text: "Every priority comes with a short reason, so staff can check it." },
+  { icon: "▤", name: "Separated by organisation", text: "Each organisation sees only its own complaints and policies." },
+];
 export default function Home() {
   return (
     <main>
@@ -213,7 +223,38 @@ export default function Home() {
           ))}
         </div>
       </section>
+      <section className="section">
+        <div className="section-heading">
+          <span className="section-label">ONE PLATFORM</span>
+          <h2>Built for any organisation.</h2>
+          <p>Each organisation gets its own categories, departments and policies.</p>
+        </div>
+        <div className="org-grid">
+          {organisations.map((o) => (
+            <article className="feature-card" key={o.name}>
+              <span className="feature-icon">{o.icon}</span>
+              <h3>{o.name}</h3>
+              <p>{o.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
 
+      <section className="how-section">
+        <div className="section-heading">
+          <span className="section-label">RESPONSIBLE BY DESIGN</span>
+          <h2>AI that assists, never decides.</h2>
+        </div>
+        <div className="org-grid">
+          {principles.map((p) => (
+            <div className="step-card" key={p.name}>
+              <span className="step-number">{p.icon}</span>
+              <h3>{p.name}</h3>
+              <p>{p.text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
       <section className="cta-section" id="about">
         <div>
           <span className="section-label">A BETTER WAY FORWARD</span>
@@ -232,6 +273,9 @@ export default function Home() {
         </a>
         <p>Smarter grievance management, built around people.</p>
         <span>© 2026 ResolveAI. All rights reserved.</span>
+                <a href="https://github.com/tanishab-3/resolve-ai" className="footer-link">
+          View source on GitHub ↗
+        </a>
       </footer>
     </main>
   );
