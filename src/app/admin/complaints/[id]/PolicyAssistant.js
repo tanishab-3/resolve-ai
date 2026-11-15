@@ -2,6 +2,19 @@
 
 import { useState } from "react";
 
+function SourceItem({ s }) {
+  return (
+    <div className={`source-item ${s.cited ? "cited" : ""}`}>
+      <b>
+        [{s.n}] {s.title}
+        {s.cited && <span className="source-tag">used</span>}
+      </b>
+      {s.excerpt}
+      <div className="hint">{Math.round(s.similarity * 100)}% match</div>
+    </div>
+  );
+}
+
 export default function PolicyAssistant({ rowId }) {
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(null);
@@ -25,6 +38,9 @@ export default function PolicyAssistant({ rowId }) {
       setLoading(false);
     }
   }
+
+  const used = result?.sources?.filter((s) => s.cited) ?? [];
+  const others = result?.sources?.filter((s) => !s.cited) ?? [];
 
   return (
     <div>
@@ -52,16 +68,22 @@ export default function PolicyAssistant({ rowId }) {
             </p>
           </div>
 
-          {result.sources.map((s) => (
-            <div key={s.n} className={`source-item ${s.cited ? "cited" : ""}`}>
-              <b>
-                [{s.n}] {s.title}
-                {s.cited && <span className="source-tag">used</span>}
-              </b>
-              {s.excerpt}
-              <div className="hint">{Math.round(s.similarity * 100)}% match</div>
-            </div>
+          {used.length === 0 && (
+            <p className="hint">The assistant did not rely on any excerpt.</p>
+          )}
+
+          {used.map((s) => (
+            <SourceItem key={s.n} s={s} />
           ))}
+
+          {others.length > 0 && (
+            <details className="other-sources">
+              <summary>Other excerpts that were retrieved ({others.length})</summary>
+              {others.map((s) => (
+                <SourceItem key={s.n} s={s} />
+              ))}
+            </details>
+          )}
         </div>
       )}
     </div>

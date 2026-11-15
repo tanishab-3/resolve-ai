@@ -39,8 +39,9 @@ export async function POST(request) {
     });
 
     return NextResponse.json({ ok: true, ...result });
-  } catch (error) {
+    } catch (error) {
     console.error("Add policy failed:", error?.message || error);
     return NextResponse.json({ error: "Could not save the policy" }, { status: 500 });
+ 
   }
 }
