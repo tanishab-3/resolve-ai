@@ -1,3 +1,4 @@
+import { consumeQuota, LIMIT_MESSAGES } from "@/lib/rateLimit";
 import { NextResponse } from "next/server";
 import { supabase } from "@/lib/supabase";
 import { getCurrentUser } from "@/lib/auth/session";
@@ -41,7 +42,9 @@ export async function POST(_request, { params }) {
     if ((await countPolicies(user.organizationId)) === 0) {
       return NextResponse.json({ noPolicies: true });
     }
-
+    if (!(await consumeQuota(user.id, "suggestion"))) {
+      return NextResponse.json({ error: LIMIT_MESSAGES.suggestion }, { status: 429 });
+    }
     const org = await getOrganizationById(user.organizationId);
     const embedding = await embedText(complaintText(complaint));
     const chunks = await retrieveChunks(embedding, user.organizationId);

@@ -1,3 +1,4 @@
+import { consumeQuota, LIMIT_MESSAGES } from "@/lib/rateLimit";
 import { NextResponse } from "next/server";
 import { getCurrentUser } from "@/lib/auth/session";
 import { addPolicy, MAX_POLICY_CHARS } from "@/lib/policies";
@@ -30,7 +31,9 @@ export async function POST(request) {
         { status: 400 }
       );
     }
-
+    if (!(await consumeQuota(user.id, "policy"))) {
+      return NextResponse.json({ error: LIMIT_MESSAGES.policy }, { status: 429 });
+    }
     const result = await addPolicy({
       orgId: user.organizationId,
       userId: user.id,

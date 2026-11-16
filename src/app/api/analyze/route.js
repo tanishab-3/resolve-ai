@@ -1,3 +1,4 @@
+import { consumeQuota, LIMIT_MESSAGES } from "@/lib/rateLimit";
 import { GoogleGenAI, Type } from "@google/genai";
 import { NextResponse } from "next/server";
 import { supabase } from "@/lib/supabase";
@@ -108,7 +109,9 @@ export async function POST(request) {
     if (!title || !location || !description) {
       return NextResponse.json({ error: "Missing fields" }, { status: 400 });
     }
-
+    if (!(await consumeQuota(user.id, "complaint"))) {
+      return NextResponse.json({ error: LIMIT_MESSAGES.complaint }, { status: 429 });
+    }
     const prompt = `You are an assistant for the grievance system of "${org.name}" (a ${org.type.toLowerCase()}).
 Analyse the complaint below and return your suggestion as JSON.
 

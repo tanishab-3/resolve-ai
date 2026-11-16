@@ -26,12 +26,17 @@ export default function NewComplaintForm() {
         body: JSON.stringify(form),
       });
 
-      if (!res.ok) throw new Error("Request failed");
+            if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        const error = new Error("Request failed");
+        if (res.status === 429) error.userMessage = data.error;
+        throw error;
+      }
 
       const analysis = await res.json();
       setResult({ id: analysis.id, analysis });
     } catch (err) {
-      setError("Could not analyse the complaint. Please try again.");
+           setError(err.userMessage || "Could not analyse the complaint. Please try again.");
     } finally {
       setLoading(false);
     }
