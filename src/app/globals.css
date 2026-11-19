@@ -1383,3 +1383,14 @@ a.dup-tag:hover { background: #e7dcff; }
 }
 .other-sources { margin-top: 12px; }
 .other-sources summary { cursor: pointer; font-size: 11px; font-weight: 600; color: var(--blue); }
+
+/* ---------- Organisation menu (platform admin only) ---------- */
+.org-menu { position: relative; }
+.org-menu-button { max-width: 280px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; padding: 8px 12px; border: 1px solid var(--border); border-radius: 8px; background: white; font-family: inherit; font-size: 12px; font-weight: 600; color: #64748b; cursor: pointer; }
+.org-menu-button:hover { border-color: var(--blue); color: var(--blue); }
+.org-menu-list { position: absolute; right: 0; top: calc(100% + 8px); z-index: 20; min-width: 220px; padding: 8px; background: white; border: 1px solid var(--border); border-radius: 10px; box-shadow: 0 12px 30px rgba(31, 59, 104, 0.12); }
+.org-menu-title { padding: 6px 10px; font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #8795a9; }
+.org-menu-item { display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 9px 10px; border: none; border-radius: 8px; background: none; font-family: inherit; font-size: 12px; color: var(--navy); text-align: left; cursor: pointer; }
+.org-menu-item:hover { background: #f1f5ff; }
+.org-menu-item.active { font-weight: 700; color: var(--blue); }
+.org-menu-item:disabled { opacity: 0.6; cursor: wait; }
